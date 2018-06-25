@@ -25,7 +25,7 @@ export default Ember.Component.extend({
       this.set("isCreatingEnginner", true);
       this.get("ajax").post(endpoint, data)
       .then((data) => {
-        this.get("notify").error("User created successfully", ENV.notifications);
+        this.get("notify").success("Engineer created successfully", ENV.notifications);
         this.set("isCreatingEnginner", false);
         this.store.pushPayload(data);
         this.set("identification", "");

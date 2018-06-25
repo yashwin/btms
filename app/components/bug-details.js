@@ -21,7 +21,7 @@ export default Ember.Component.extend({
       const url = [ENV.endpoints.updatePriority, this.get("bug.id")].join('/');
       this.get("ajax").put(url, data)
       .then(() => {
-        // Success Code here
+        this.get("notify").success("Prority Changed", ENV.notifications);
       }, () => {
         // Error Code here
       });
@@ -36,6 +36,7 @@ export default Ember.Component.extend({
       this.get("ajax").put(url, data)
       .then(() => {
         this.set("bug.resolved", !bugStatus);
+        this.get("notify").success("Status Changed", ENV.notifications);
       }, () => {
         // Error Code here
       });

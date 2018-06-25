@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'btms/config/environment';
 
 export default Ember.Component.extend({
 
@@ -15,6 +16,7 @@ export default Ember.Component.extend({
       const url = [type, id].join('/');
       this.get("ajax").delete(url)
       .then((data) => {
+        this.get("notify").success("Engineer Deleted", ENV.notifications);
         const engineersData = data.engineersData.map((item) => ({
           id: item.id,
           username: item.username
