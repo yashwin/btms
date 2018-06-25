@@ -18,7 +18,7 @@ export default Ember.Component.extend({
         username,
         password
       };
-      let endpoint = "support-engineer"
+      let endpoint = "support-engineer";
       if(selectedRole === ENUMS.ROLES.PRODUCT_ENGINEER) {
         endpoint = "product-engineer";
       }

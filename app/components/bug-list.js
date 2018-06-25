@@ -14,7 +14,7 @@ export default Ember.Component.extend({
 
   actions: {
     sortStatus() {
-      const sortStatusAscending = this.get("sortStatusAscending")
+      const sortStatusAscending = this.get("sortStatusAscending");
       if(!sortStatusAscending) {
         this.set("bugSorting", ['resolved:asc']);
         this.set("sortStatusAscending", true);
@@ -25,7 +25,7 @@ export default Ember.Component.extend({
       }
     },
     sortPriority() {
-      const sortPriorityAscending = this.get("sortPriorityAscending")
+      const sortPriorityAscending = this.get("sortPriorityAscending");
       if(!sortPriorityAscending) {
         this.set("bugSorting", ['priority:asc']);
         this.set("sortPriorityAscending", true);

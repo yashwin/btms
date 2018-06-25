@@ -13,12 +13,15 @@ export default Ember.Component.extend({
 
   roleProperty() {
     const role = this.get("user.role");
-    if(role === ENUMS.ROLES.ADMIN)
+    if(role === ENUMS.ROLES.ADMIN) {
       this.set("isAdmin", true);
-    else if(role === ENUMS.ROLES.SUPPORT_ENGINEER)
+    }
+    else if(role === ENUMS.ROLES.SUPPORT_ENGINEER) {
       this.set("isSupportEngineer", true);
-    else if(role === ENUMS.ROLES.PRODUCT_ENGINEER)
+    }
+    else if(role === ENUMS.ROLES.PRODUCT_ENGINEER) {
       this.set("isProductEngineer", true);
+    }
   },
 
   actions: {

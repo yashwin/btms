@@ -1,4 +1,3 @@
-import config from 'btms/config/environment';
 export default function() {
 
   this.post('/login', () => {
@@ -89,7 +88,7 @@ export default function() {
           resolved:  data.data.attributes.resolved,
         }
       }
-    }
+    };
   });
 
 }

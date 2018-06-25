@@ -37,8 +37,6 @@ const BtmsAuthenticator = Base.extend({
         resolve(data);
         this.resumeTransistion();
       }, (error) => {
-        loginStatus(false);
-        errorCallback(error);
         this.get("notify").error(error.payload.message, ENV.notifications);
         for (error of error.errors) {
           if (error.status === "0") {
@@ -53,7 +51,7 @@ const BtmsAuthenticator = Base.extend({
 
   restore(data) {
     const ajax = this.get("ajax");
-    return new Ember.RSVP.Promise((resolve, reject) => {
+    return new Ember.RSVP.Promise((resolve) => {
       const url = ENV['ember-simple-auth']['checkEndPoint'];
       ajax.post(url, {data})
       .then((data) => {
@@ -72,13 +70,13 @@ const BtmsAuthenticator = Base.extend({
   invalidate() {
     const ajax = this.get("ajax");
     localStorage.clear();
-    return new Ember.RSVP.Promise((resolve, reject) => {
+    return new Ember.RSVP.Promise((resolve) => {
       const url = ENV['ember-simple-auth']['logoutEndPoint'];
       ajax.post(url)
       .then((data) => {
         resolve(data);
         location.reload();
-      }, (error) => {
+      }, () => {
         location.reload();
       });
     });

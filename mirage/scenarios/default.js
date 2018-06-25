@@ -3,8 +3,8 @@ export default function(server) {
   var productEngineerCount = 5;
   var supportEngineerCount = 5;
   var bugCount = 10;
-  var bugs = server.createList('bug', bugCount);
-  var users = server.createList('user', userCount);
-  var productEngineers = server.createList('product-engineer', productEngineerCount);
-  var supportEngineers = server.createList('support-engineer', supportEngineerCount);
+  server.createList('bug', bugCount);
+  server.createList('user', userCount);
+  server.createList('product-engineer', productEngineerCount);
+  server.createList('support-engineer', supportEngineerCount);
 }

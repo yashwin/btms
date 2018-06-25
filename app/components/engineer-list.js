@@ -28,7 +28,7 @@ export default Ember.Component.extend({
 
       }, () => {
         // error code goes here
-      })
+      });
     }
   }
 

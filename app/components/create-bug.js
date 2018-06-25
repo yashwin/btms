@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import ENUMS from 'btms/enums';
-import ENV from 'btms/config/environment';
 
 export default Ember.Component.extend({
   priorities: ENUMS.PRIORITY.CHOICES,
@@ -18,14 +17,14 @@ export default Ember.Component.extend({
         name,
         description,
         priority
-      }
-      const bug = this.get("store").createRecord('bug', data)
+      };
+      const bug = this.get("store").createRecord('bug', data);
       bug.save()
       .then((data) => {
         this.store.pushPayload(data);
       }, () => {
 
-      })
+      });
     }
   }
 });

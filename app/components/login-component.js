@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'btms/config/environment';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),

@@ -11,7 +11,7 @@ const ENUMS = {
     MEDIUM: 1,
     HIGH: 2
   }
- }
+};
 
  for (let enumName in ENUMS) {
    const enumValues = ENUMS[enumName];

@@ -8,9 +8,9 @@ export default DS.Model.extend({
 
   statusHumanized: (function() {
     if(this.get("resolved")) {
-      return "Resolved"
+      return "Resolved";
     }
-    return "Unresolved"
+    return "Unresolved";
   }).property("resolved"),
 
 });
