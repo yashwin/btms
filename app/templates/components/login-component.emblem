@@ -1,0 +1,18 @@
+.container
+  form
+    h3
+      |  Member Login
+
+    p
+      = input class="input" placeholder="Username / Email" value=identification id="username" autofocus="autofocus" autocomplete="username"
+
+    p
+      = input class="input" type="password" placeholder="Password" value=password id="password" autocomplete="current-password"
+
+    p
+      button click="authenticate" disabled=isLogingIn
+        if isLogingIn
+          .fa-font-size
+            i.fa class="fa-spinner fa-spin"
+            | &nbsp;
+        | Login

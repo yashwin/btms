@@ -1,0 +1,22 @@
+td
+  = bug.name
+td
+  = bug.description
+td
+  if isProductEngineer
+    select onchange={action "changePriority" value="target.value"} id="bug-priority"
+      option selected="true" value=bug.priority
+        | #{bug-priority bug.priority}
+      each otherProrities as |priority|
+        option value=priority.value
+          | #{bug-priority priority.value}
+  else
+    | #{bug-priority bug.priority}
+
+td
+  = bug.statusHumanized
+  
+if isProductEngineer
+  td
+    button click="changeStatus"
+      | Change Status

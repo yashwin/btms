@@ -1,0 +1,27 @@
+.user-details
+  table
+    tr
+      th
+        | USERNAME
+      th
+        | #{user.name}
+    tr
+      th
+        | ROLE
+      th
+        | #{user.humanizedRole}
+  div
+    button click="invalidateSession"
+      | LOGOUT
+
+if isAdmin
+  div
+    = create-engineer
+    = engineer-list
+if isSupportEngineer
+  div
+    = bug-list
+if isProductEngineer
+  div
+    = create-bug
+    = bug-list isProductEngineer=isProductEngineer

@@ -1,0 +1,22 @@
+.container
+  form
+    h3
+      |  Create New Bug
+
+    p
+      = input class="input" type="text" placeholder="Bug Name" value=bug
+    p
+      = input class="input" type="text" placeholder="Bug Description" value=description
+    p
+      select onchange={action "bugPrority" value="target.value"} id="bug-priority-new"
+        each priorities as |priority|
+          option value=priority.value
+            | #{bug-priority priority.value}
+
+    p.control.flex-center.margin-top
+      button.button.is-primary.is-fullwidth.login-button.mp-login-button.highlighted-button click="createBug" disabled=isCreatingBug
+        if isCreatingBug
+          .fa-font-size
+            i.fa class="fa-spinner fa-spin"
+            | &nbsp;
+        | Create Bug

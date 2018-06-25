@@ -1,0 +1,83 @@
+.bug-list-container, .engineer-list-container {
+  padding: 50px 400px 0px 400px;
+  h3 {
+      text-align: center;
+  }
+}
+.bug-table, .engineer-table {
+  border: 2px solid #888;
+  border-spacing: 0px;
+  tr th {
+    background-color: lighten(#888, 20%)
+  }
+  tr {
+    text-align: center;
+  }
+  tr td {
+    padding: 10px;
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: #888;
+    &:last-child {
+      border-right-width: 0px
+    }
+  }
+  tr:last-child td{
+    border-bottom-width: 0px
+  }
+  i.fa-sort-up {
+    margin-left: 5px;
+    position: relative;
+    top: 4px
+  }
+  i.fa-sort-down {
+    margin-left: 5px;
+    position: relative;
+    top: -2px
+  }
+}
+
+.engineer-list-container  {
+  padding: 50px 550px 0px 550px;
+}
+
+.engineer-table {
+  width: 300px
+}
+
+.container {
+  h3 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  .input, select {
+    width: 250px;
+    height: 30px;
+  }
+}
+
+.user-details {
+  table tr th {
+    min-width: 150px;
+    background-color: #888;
+    color: #FFF;
+    font-size: 15px
+  }
+
+}
+
+button {
+  background-color: #000;
+  color: #FFF;
+  padding: 3px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px
+}
+
+i {
+  cursor: pointer;
+}

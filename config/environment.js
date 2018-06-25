@@ -6,6 +6,15 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    notifications: {
+      autoClear: true,
+      duration: 7000
+    },
+    'ember-cli-mirage': {
+      enabled: true
+    },
+    namespace: "api",
+    host: "http://localhost:8000",
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,10 +25,22 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    'ember-simple-auth': {
+      loginEndPoint: '/login',
+      checkEndPoint: '/check',
+      logoutEndPoint: '/logout',
+      routeAfterAuthentication: 'authenticated.index',
+      routeIfAlreadyAuthenticated: 'authenticated.index',
+    },
+    endpoints: {
+      logout: 'logout',
+      updatePriority: 'update_priority',
+      updateStatus: 'update_status',
+      bugs: 'bugs',
     }
   };
 

@@ -1,0 +1,28 @@
+.bug-list-container
+  h3
+    |  List Of Bugs
+
+  table.bug-table
+    tr
+      th
+        | Name
+      th
+        | Description
+      th click="sortPriority"
+        | Priority
+        if sortPriorityAscending
+          i.fa.fa-sort-down
+        else
+          i.fa.fa-sort-up
+      th click="sortStatus"
+        | Status
+        if sortStatusAscending
+            i.fa.fa-sort-down
+        else
+          i.fa.fa-sort-up
+      if isProductEngineer
+        th
+          | Actions
+
+    each sortedBugs as |bug|
+      = bug-details bug=bug isProductEngineer=isProductEngineer

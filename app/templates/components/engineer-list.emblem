@@ -1,0 +1,30 @@
+.engineer-list-container
+  h3
+    |  List Of Engineers
+
+  table.engineer-table
+    tr
+      th
+        | Name
+      th
+        | Role
+      th
+        | Actions
+
+    each supportEngineers as |engineer|
+      tr
+        td
+          = engineer.username
+        td
+          | Support
+        td
+           i.fa.fa-trash-o click="'deleteEngineer' 'support-engineer' engineer.id"
+
+    each productEngineers as |engineer|
+      tr
+        td
+          = engineer.username
+        td
+          | Product
+        td
+           i.fa.fa-trash-o click="'deleteEngineer' 'product-engineer' engineer.id"

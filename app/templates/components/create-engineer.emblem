@@ -1,0 +1,22 @@
+.container
+  form
+    h3
+      |  Create New Engineer
+
+    p
+      = input class="input" placeholder="Username / Email" value=identification id="username"
+    p
+      = input class="input" type="password" placeholder="Password" value=password id="password"
+    p
+      select{action 'selectRole' on='change'} id="engineer-role"
+        each roles as |role|
+          option value=role.value
+            | #{engineer-role role.value}
+
+    p
+      button click="createEngineer" disabled=isCreatingEnginner
+        if isCreatingEnginner
+          .fa-font-size
+            i.fa class="fa-spinner fa-spin"
+            | &nbsp;
+        | Create
