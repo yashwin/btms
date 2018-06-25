@@ -60,7 +60,7 @@ const BtmsAuthenticator = Base.extend({
         if (location.pathname === '/login') {
           this.resumeTransistion();
         }
-      }, (error) => {
+      }, () => {
         localStorage.clear();
         location.reload();
       });
