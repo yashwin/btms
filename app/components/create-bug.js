@@ -21,6 +21,8 @@ export default Ember.Component.extend({
       const bug = this.get("store").createRecord('bug', data);
       bug.save()
       .then((data) => {
+        this.set("bug", "");
+        this.set("description", "");
         this.store.pushPayload(data);
       }, () => {
 
